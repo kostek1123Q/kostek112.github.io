@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Kostek112 - Strona</title>
   <style>
-    /* --- Styl globalny czarno-zielony dla całej strony --- */
     body {
       background-color: #000000;
       color: #00FF00;
@@ -33,8 +32,6 @@
     nav a:hover {
       color: #00cc00;
     }
-
-    /* --- Ukrywanie sekcji --- */
     section {
       display: none;
       width: 100%;
@@ -44,7 +41,6 @@
     section.active {
       display: block;
     }
-
     h1 {
       font-weight: 900;
       font-size: 2.8rem;
@@ -77,8 +73,6 @@
       color: #fff;
       box-shadow: 0 0 20px #00cc00;
     }
-
-    /* --- Serwery Discord - wygląd kart --- */
     .server-card {
       background: #0b0b0b;
       border: 2px solid #00FF00;
@@ -124,9 +118,25 @@
 
   <main>
     <section id="home" class="active">
-      <h1>Witaj na stronie Kostek112!</h1>
-      <p>Tu możesz znaleźć różne usługi i oferty.</p>
-      <p>Kliknij powyżej, aby zobaczyć Social Boost lub Serwery Discord.</p>
+      <h1>⚙️ Usługi</h1>
+      <ul class="services" style="list-style:none; padding:0; max-width:600px; margin: 0 auto 30px; color:#00FF00; text-align:left;">
+        <li style="margin-bottom:20px;">
+          <span style="font-size:1.5rem;">🤖</span> <strong>Discord</strong><br />
+          Mogę zrobić ładny layout serwera, aż po pisanie własnych botów!
+        </li>
+        <li style="margin-bottom:20px;">
+          <span style="font-size:1.5rem;">📢</span> <strong>Social Boost</strong><br />
+          Pomoc w wypromowaniu sociali, od Instagrama po Facebooka!
+        </li>
+        <li style="margin-bottom:20px;">
+          <span style="font-size:1.5rem;">🎬</span> <strong>Montaż</strong><br />
+          Pomagam z montażem filmów bądź tworzeniem grafik i miniaturek!
+        </li>
+      </ul>
+      <p style="font-weight:bold; font-size:1.1rem; text-align:center; max-width:600px; margin: 0 auto;">
+        Aby skorzystać z moich usług, napisz do mnie na Discordzie!<br />
+        nick: <code>_kostek112_</code>
+      </p>
     </section>
 
     <section id="social-boost">
@@ -168,21 +178,18 @@
   </main>
 
   <script>
-    // Przełączanie widoków sekcji
     function showPage(pageId) {
       document.querySelectorAll('section').forEach(section => {
         section.classList.remove('active');
       });
       document.getElementById(pageId).classList.add('active');
 
-      // Ustaw kolor aktywnego linka na jasnozielony (#00cc00), reszta na #00FF00
       document.querySelectorAll('nav a').forEach(link => {
         link.style.color = '#00FF00';
       });
       document.getElementById('link-' + pageId).style.color = '#00cc00';
     }
 
-    // Ustawienia eventów
     document.getElementById('link-home').addEventListener('click', e => {
       e.preventDefault();
       showPage('home');
@@ -196,7 +203,6 @@
       showPage('discord-servers');
     });
 
-    // Pokazujemy domyślnie stronę główną i podkreślamy link
     showPage('home');
   </script>
 
