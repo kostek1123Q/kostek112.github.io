@@ -1,151 +1,344 @@
-<!DOCTYPE html>
-<html lang="pl" style="font-size: 16px;">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>KOSTEK112 - Strona główna</title>
-  <style>
-    /* Reset i podstawowe style */
-    body {
-      margin: 0; padding: 0;
-      font-family: 'Roboto', sans-serif;
-      background-color: #000000;
-      color: #ff0000;
-      animation: fadeIn 1.5s ease forwards;
-    }
-    a {
-      color: #ff0000;
-      text-decoration: none;
-      cursor: pointer;
-    }
-    a:hover {
-      opacity: 0.7;
-    }
-    h1, h2, h3, h4, h5 {
-      margin: 0.5em 0;
-      text-align: center;
-    }
-    p {
-      text-align: center;
-      max-width: 700px;
-      margin: 0.5em auto 1.2em;
-      line-height: 1.5;
-      font-size: 1.1rem;
-    }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>KOSTEK112</title>
+<title>KOSTEK112 - Strona główna</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet" />
+<style>
+/* Reset i podstawy */
+@@ -12,40 +12,73 @@
+}
+body {
+margin: 0; padding: 20px;
+    background-color: #000000;
+    color: #ff0000;
+font-family: 'Roboto Mono', monospace;
+line-height: 1.5;
+}
 
-    /* Animacja fade-in */
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
+  /* Linie czerwone - stylizowane <hr> */
+  hr {
+  /* --- STRONA GŁÓWNA (czarno-czerwona) --- */
+  body.home {
+    background-color: #000000;
+    color: #ff0000;
+  }
+  body.home hr {
+border: none;
+height: 1px;
+background: #ff0000;
+margin: 1.5rem 0;
+opacity: 0.5;
+}
+  body.home a {
+    color: #ff0000;
+    text-decoration: underline;
+  }
+  body.home a:hover {
+    opacity: 0.7;
+  }
 
-    /* Nawigacja - link do strony głównej na górze */
-    nav.top-nav {
-      text-align: center;
-      padding: 1rem 0;
-      border-bottom: 1px solid #ff0000;
-      margin-bottom: 1.5rem;
-    }
-    nav.top-nav a {
-      font-weight: bold;
-      font-size: 1.3rem;
-      text-decoration: underline;
-      color: #ff0000;
-    }
-    nav.top-nav a:hover {
-      opacity: 0.8;
-    }
+  /* --- PODSTRONA (czarno-niebieska) --- */
+  body.social {
+    background-color: #000000;
+    color: #00aaff;
+  }
+  body.social hr {
+    border: none;
+    height: 1px;
+    background: #00aaff;
+    margin: 1.5rem 0;
+    opacity: 0.5;
+  }
+  body.social a {
+    color: #00aaff;
+    text-decoration: none;
+  }
+  body.social a:hover {
+    opacity: 0.8;
+  }
 
-    /* Nawigacja podstron trochę niżej */
-    nav.sub-nav {
-      text-align: center;
-      margin-bottom: 2rem;
-    }
-    nav.sub-nav a {
-      margin: 0 1.5rem;
-      font-weight: bold;
-      font-size: 1.1rem;
-      text-decoration: underline;
-      color: #ff0000;
-    }
-    nav.sub-nav a:hover {
-      opacity: 0.8;
-    }
+  /* Linie i animacje */
+  hr {
+    border: none;
+    height: 1px;
+    opacity: 0.5;
+  }
 
-    /* Sekcje */
-    section {
-      max-width: 900px;
-      margin: 0 auto 3rem;
-      padding: 0 1rem;
-    }
+  /* Animacja pisania */
+.typing {
+display: inline-block;
+white-space: nowrap;
+overflow: hidden;
+    border-right: 2px solid #ff0000;
+    border-right: 2px solid currentColor;
+animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+font-weight: bold;
+font-size: 2rem;
+}
 
-    /* Przycisk DOŁĄCZ NA DISCORD - czarny tekst */
-    .btn {
-      display: inline-block;
-      background-color: #00aaff;
-      color: #000000; /* czarny tekst */
-      font-weight: bold;
-      padding: 12px 30px;
-      border-radius: 6px;
-      text-align: center;
-      cursor: pointer;
-      margin-top: 1.5rem;
-      transition: background-color 0.3s ease;
-      text-decoration: none;
-      font-size: 1.1rem;
-    }
-    .btn:hover {
-      background-color: #008ecc;
-    }
+@keyframes typing {
+from { width: 0 }
+to { width: 100% }
+}
 
-  </style>
+@keyframes blink-caret {
+0%, 100% { border-color: transparent }
+    50% { border-color: #ff0000; }
+    50% { border-color: currentColor; }
+}
+
+/* Sekcje i wyrównanie */
+@@ -54,91 +87,201 @@
+opacity: 0.8;
+font-size: 0.9rem;
+}
+
+section {
+max-width: 600px;
+margin: 0 auto 3rem auto;
+}
+
+h1, h2 {
+margin: 0.3rem 0;
+}
+
+h1 {
+font-size: 3rem;
+}
+
+h2 {
+font-size: 1.5rem;
+margin-bottom: 0.5rem;
+}
+
+  /* Usługi - lista */
+  .services {
+  ul.services {
+list-style: none;
+padding-left: 0;
+}
+
+  .services li {
+  ul.services li {
+margin-bottom: 1.3rem;
+}
+
+.service-title {
+font-weight: bold;
+font-size: 1.2rem;
+}
+
+  /* Emotikony */
+.emoji {
+margin-right: 8px;
+}
+  code {
+    background-color: rgba(255,255,255,0.1);
+    padding: 2px 5px;
+    border-radius: 3px;
+  }
+
+  /* Link w stylu terminala */
+  a {
+    color: #ff0000;
+    text-decoration: underline;
+  /* Button na podstronie */
+  .btn {
+    display: inline-block;
+    background-color: #00aaff;
+    color: #000;
+    font-weight: bold;
+    padding: 12px 25px;
+    border-radius: 6px;
+    text-decoration: none;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: background-color 0.3s ease;
+}
+  a:hover {
+    opacity: 0.7;
+  .btn:hover {
+    background-color: #008ecc;
+}
+
+  /* Stopka */
+  footer {
+    border-top: 1px solid #ff0000;
+    padding-top: 1rem;
+    font-style: italic;
+  /* Link między stronami */
+  nav {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  nav a {
+    color: currentColor;
+    margin: 0 15px;
+    font-weight: bold;
+    font-size: 1rem;
+    text-decoration: underline;
+  }
+  nav a:hover {
+    opacity: 0.7;
+}
+
+</style>
 </head>
 <body>
 
-  <!-- Link do strony głównej na górze -->
-  <nav class="top-nav">
-    <a href="#" id="link-home">Strona główna</a>
-  </nav>
+<header>
+  <h1 class="typing">KOSTEK112</h1>
+  <hr />
+</header>
 
-  <!-- Linki do podstron nieco niżej -->
-  <nav class="sub-nav">
-    <a href="#social-boost" id="link-social">!SOCIAL BOOST</a>
-    <!-- Możesz tutaj dodać kolejne linki -->
-  </nav>
+<section>
+  <h2><span class="emoji">⚙️</span> Usługi</h2>
+  <ul class="services">
+    <li><span class="emoji">🤖</span> <span class="service-title">Discord</span><br />
+      Mogę zrobić ładny layout serwera, aż po pisanie własnych botów!</li>
+    <li><span class="emoji">📢</span> <span class="service-title">Social Boost</span><br />
+      Pomoc w wypromowaniu sociali, od Instagrama po Facebooka!</li>
+    <li><span class="emoji">🎬</span> <span class="service-title">Montaż</span><br />
+      Pomagam z montażem filmów bądź tworzeniem grafik i miniaturek!</li>
+  </ul>
+  <hr />
+  <p style="font-weight:bold; font-size:1.1rem; text-align:center;">
+    Aby skorzystać z moich usług, napisz do mnie na Discordzie!<br />
+    nick: <code>_kostek112_</code>
+  </p>
+</section>
 
-  <section id="home-section">
-    <h1>KOSTEK112</h1>
-    <h2>Usługi</h2>
-    <p>Mogę zrobić ładny layout serwera,​ aż po pisanie własnych botów!<br/>
-    Pomoc w wypromowaniu sociali, od instagrama po facebooka!<br/>
-    Pomoc z montażem filmów bądź tworzeniem grafik i miniaturek!</p>
+<footer>
+  <p>© 2025 Kostek112. Wszelkie prawa zastrzeżone.</p>
+  <p>© 2025 Kostek112. All rights reserved.</p>
+</footer>
+<body class="home">
 
-    <h3>Aby skorzystać z moich usług napisz do mnie na Discordzie!</h3>
-    <p>nick: <strong>_kostek112_</strong></p>
+<nav>
+  <a href="#" id="link-home">Strona główna</a> |
+  <a href="#" id="link-social">!SOCIAL BOOST</a>
+</nav>
+
+<div id="content">
+
+  <!-- STRONA GŁÓWNA -->
+  <header>
+    <h1 class="typing">KOSTEK112</h1>
+    <hr />
+  </header>
+
+  <section>
+    <h2><span class="emoji">⚙️</span> Usługi</h2>
+    <ul class="services">
+      <li><span class="emoji">🤖</span> <span class="service-title">Discord</span><br />
+        Mogę zrobić ładny layout serwera, aż po pisanie własnych botów!</li>
+      <li><span class="emoji">📢</span> <span class="service-title">Social Boost</span><br />
+        Pomoc w wypromowaniu sociali, od Instagrama po Facebooka!</li>
+      <li><span class="emoji">🎬</span> <span class="service-title">Montaż</span><br />
+        Pomagam z montażem filmów bądź tworzeniem grafik i miniaturek!</li>
+    </ul>
+    <hr />
+    <p style="font-weight:bold; font-size:1.1rem; text-align:center;">
+      Aby skorzystać z moich usług, napisz do mnie na Discordzie!<br />
+      nick: <code>_kostek112_</code>
+    </p>
   </section>
 
-  <section id="social-boost">
-    <h1>!SOCIAL BOOST</h1>
-    <p>🇵🇱</p>
-    <p>🎯 Zdobądź popularność w sieci!<br/>
+  <footer>
+    <p>© 2025 Kostek112. Wszelkie prawa zastrzeżone.</p>
+    <p>© 2025 Kostek112. All rights reserved.</p>
+  </footer>
+
+</div>
+
+<script>
+  // Obsługa przełączania stron (home <-> social)
+  const content = document.getElementById('content');
+  const body = document.body;
+  const linkHome = document.getElementById('link-home');
+  const linkSocial = document.getElementById('link-social');
+
+  const homeHTML = `
+    <header>
+      <h1 class="typing">KOSTEK112</h1>
+      <hr />
+    </header>
+    <section>
+      <h2><span class="emoji">⚙️</span> Usługi</h2>
+      <ul class="services">
+        <li><span class="emoji">🤖</span> <span class="service-title">Discord</span><br />
+          Mogę zrobić ładny layout serwera, aż po pisanie własnych botów!</li>
+        <li><span class="emoji">📢</span> <span class="service-title">Social Boost</span><br />
+          Pomoc w wypromowaniu sociali, od Instagrama po Facebooka!</li>
+        <li><span class="emoji">🎬</span> <span class="service-title">Montaż</span><br />
+          Pomagam z montażem filmów bądź tworzeniem grafik i miniaturek!</li>
+      </ul>
+      <hr />
+      <p style="font-weight:bold; font-size:1.1rem; text-align:center;">
+        Aby skorzystać z moich usług, napisz do mnie na Discordzie!<br />
+        nick: <code>_kostek112_</code>
+      </p>
+    </section>
+    <footer>
+      <p>© 2025 Kostek112. Wszelkie prawa zastrzeżone.</p>
+      <p>© 2025 Kostek112. All rights reserved.</p>
+    </footer>
+  `;
+
+  const socialHTML = `
+    <header>
+      <h1 class="typing"># !SOCIAL BOOST</h1>
+      <hr />
+    </header>
+    <section>
+      <h2>🇵🇱 Polska</h2>
+      <p>🎯 Zdobądź popularność w sieci!<br/>
       🔥 Obserwacje, polubienia, wyświetlenia na:<br/>
       📸 Instagram • 🎵 TikTok • ▶️ YouTube • 📘 Facebook<br/>
       💸 Najniższe ceny na rynku!<br/>
-      🚀 Błyskawiczna realizacja • 100% anonimowo • Bezpiecznie
-    </p>
-    <p>💬 Dołącz teraz i zacznij budować swoją markę online!</p>
+      🚀 Błyskawiczna realizacja • 100% anonimowo • Bezpiecznie</p>
 
-    <p>🇬🇧</p>
-    <p>🚀 Boost Your Online Presence!<br/>
+      <p>💬 Dołącz teraz i zacznij budować swoją markę online!</p>
+
+      <hr />
+
+      <h2>🇬🇧 English</h2>
+      <p>🚀 Boost Your Online Presence!<br/>
       💥 Get followers, likes & views on:<br/>
       📸 Instagram • 🎵 TikTok • ▶️ YouTube • 📘 Facebook<br/>
       💸 Lowest prices guaranteed!<br/>
-      ⚡ Fast delivery • 100% safe • Fully anonymous
-    </p>
-    <p>💬 Join now and grow your social media like a pro!</p>
+      ⚡ Fast delivery • 100% safe • Fully anonymous</p>
 
-    <a href="https://discord.gg/FkNAZE8BcE" target="_blank" class="btn" rel="noopener noreferrer">Dołącz na Discord</a>
-  </section>
+      <p>💬 Join now and grow your social media like a pro!</p>
+
+      <a href="https://discord.gg/FkNAZE8BcE" target="_blank" rel="noopener" class="btn">Dołącz na Discord</a>
+    </section>
+    <footer>
+      <p>© 2025 Kostek112. Wszelkie prawa zastrzeżone.</p>
+      <p>© 2025 Kostek112. All rights reserved.</p>
+    </footer>
+  `;
+
+  function showHome() {
+    body.className = 'home';
+    content.innerHTML = homeHTML;
+  }
+  function showSocial() {
+    body.className = 'social';
+    content.innerHTML = socialHTML;
+  }
+
+  linkHome.addEventListener('click', e => {
+    e.preventDefault();
+    showHome();
+  });
+  linkSocial.addEventListener('click', e => {
+    e.preventDefault();
+    showSocial();
+  });
+
+</script>
 
 </body>
 </html>
