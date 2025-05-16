@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>🟢 Serwery Discord | Kostek112</title>
+    <style>
+        body {
+            background-color: #000000;
+            color: #00FF00;
+            font-family: 'Roboto', sans-serif;
+            margin: 0; 
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+        h1 {
+            font-weight: 900;
+            font-size: 2.8rem;
+            margin-bottom: 25px;
+            text-align: center;
+            text-shadow: 0 0 8px #00FF00;
+        }
+        .server-card {
+            background: #0b0b0b;
+            border: 2px solid #00FF00;
+            border-radius: 12px;
+            padding: 25px 30px;
+            margin: 15px 0;
+            width: 340px;
+            box-shadow: 0 0 15px #00FF00aa;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        .server-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 25px #00ff00cc;
+        }
+        .server-name {
+            font-size: 1.9rem;
+            font-weight: 900;
+            margin-bottom: 10px;
+        }
+        .server-info {
+            font-size: 1.2rem;
+            margin-bottom: 12px;
+        }
+        .price {
+            font-size: 1.6rem;
+            font-weight: 900;
+            margin-bottom: 22px;
+            color: #00cc00;
+        }
+        .btn-buy {
+            background-color: #00FF00;
+            color: #000000;
+            font-weight: 700;
+            font-size: 1.15rem;
+            padding: 14px 30px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            text-decoration: none;
+            user-select: none;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 0 10px #00ff00aa;
+        }
+        .btn-buy:hover {
+            background-color: #00cc00;
+            box-shadow: 0 0 20px #00cc00;
+        }
+        footer {
+            margin-top: auto;
+            padding-top: 25px;
+            font-size: 0.9rem;
+            color: #007700;
+            text-align: center;
+            user-select: none;
+        }
+        /* Link do powrotu na górze */
+        .back-home {
+            color: #00FF00;
+            font-weight: 700;
+            margin-bottom: 40px;
+            text-decoration: none;
+            font-size: 1.1rem;
+            border: 2px solid #00FF00;
+            padding: 8px 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px #00ff00aa;
+            transition: background-color 0.3s ease;
+            user-select: none;
+        }
+        .back-home:hover {
+            background-color: #00cc00;
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-home">🏠 Powrót do strony głównej</a>
+
+    <h1>🟢 Serwery Discord - Oferta</h1>
+
+    <div class="server-card">
+        <div class="server-name">📢 Serwer 1 - Reklamowy</div>
+        <div class="server-info">👥 Ponad 530 osób</div>
+        <div class="price">💰 40 PLN</div>
+        <a href="https://discord.gg/FZBydEggmH" class="btn-buy" target="_blank" rel="noopener noreferrer">🛒 Dołącz / Kup</a>
+    </div>
+
+    <div class="server-card">
+        <div class="server-name">🛒 Serwer 2 - Shop</div>
+        <div class="server-info">👥 Ponad 300 osób</div>
+        <div class="price">💰 30 PLN</div>
+        <a href="https://discord.gg/63Dw9SWW6C" class="btn-buy" target="_blank" rel="noopener noreferrer">🛒 Dołącz / Kup</a>
+    </div>
+
+    <footer>
+        © 2025 Kostek112. Wszelkie prawa zastrzeżone.
+    </footer>
+
+</body>
+</html>
