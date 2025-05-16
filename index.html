@@ -1,128 +1,144 @@
 <!DOCTYPE html>
-<html style="font-size: 16px;" lang="pl">
+<html lang="pl">
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta charset="utf-8">
-  <title>kostek112</title>
-  <link rel="stylesheet" href="nicepage.css" media="screen">
-  <link rel="stylesheet" href="index.css" media="screen">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>KOSTEK112</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet" />
+<style>
+  /* Reset i podstawy */
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0; padding: 20px;
+    background-color: #000000;
+    color: #ff0000;
+    font-family: 'Roboto Mono', monospace;
+    line-height: 1.5;
+  }
 
-  <style>
-    /* Animacja fade-in */
-    .fade-in {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
-    }
-    .fade-in.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  </style>
+  /* Linie czerwone - stylizowane <hr> */
+  hr {
+    border: none;
+    height: 1px;
+    background: #ff0000;
+    margin: 1.5rem 0;
+    opacity: 0.5;
+  }
 
-  <script class="u-script" type="text/javascript" src="jquery.js" defer></script>
-  <script class="u-script" type="text/javascript" src="nicepage.js" defer></script>
-  
-  <script>
-    // Animacja fade-in po załadowaniu strony
-    document.addEventListener("DOMContentLoaded", () => {
-      const elements = document.querySelectorAll('.fade-in');
-      elements.forEach(el => {
-        el.classList.add('visible');
-      });
-    });
-  </script>
-  
-  <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Open+Sans:300,400,500,600,700,800">
+  /* Animacja pisania */
+  .typing {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 2px solid #ff0000;
+    animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+    font-weight: bold;
+    font-size: 2rem;
+  }
+
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+
+  @keyframes blink-caret {
+    0%, 100% { border-color: transparent }
+    50% { border-color: #ff0000; }
+  }
+
+  /* Sekcje i wyrównanie */
+  header, footer {
+    text-align: center;
+    opacity: 0.8;
+    font-size: 0.9rem;
+  }
+
+  section {
+    max-width: 600px;
+    margin: 0 auto 3rem auto;
+  }
+
+  h1, h2 {
+    margin: 0.3rem 0;
+  }
+
+  h1 {
+    font-size: 3rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  /* Usługi - lista */
+  .services {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  .services li {
+    margin-bottom: 1.3rem;
+  }
+
+  .service-title {
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+
+  /* Emotikony */
+  .emoji {
+    margin-right: 8px;
+  }
+
+  /* Link w stylu terminala */
+  a {
+    color: #ff0000;
+    text-decoration: underline;
+  }
+  a:hover {
+    opacity: 0.7;
+  }
+
+  /* Stopka */
+  footer {
+    border-top: 1px solid #ff0000;
+    padding-top: 1rem;
+    font-style: italic;
+  }
+
+</style>
 </head>
+<body>
 
-<body data-lang="pl" class="u-body u-grey-90 u-xl-mode" style="background-color:#000; color:#f00;">
-<header class="u-clearfix u-header u-header" id="header">
-  <div class="u-sheet u-valign-middle u-sheet-1">
-    <nav class="u-menu u-menu-one-level u-offcanvas u-menu-1" role="navigation" aria-label="Menu navigation">
-      <div class="menu-collapse" style="font-size: 1rem; letter-spacing: 0px;">
-        <a class="u-button-style u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-top-bottom-menu-spacing u-hamburger-link u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="#" tabindex="-1" aria-label="Open menu" aria-controls="1eda">
-          <svg class="u-svg-link" viewBox="0 0 24 24"><use xlink:href="#menu-hamburger"></use></svg>
-          <svg class="u-svg-content" id="menu-hamburger" viewBox="0 0 16 16" x="0" y="0"><g><rect y="1" width="16" height="2"></rect><rect y="7" width="16" height="2"></rect><rect y="13" width="16" height="2"></rect></g></svg>
-        </a>
-      </div>
-      <div class="u-nav-container">
-        <ul class="u-nav u-unstyled u-nav-1" role="menubar">
-          <li class="u-nav-item" role="none"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="./" style="padding: 10px 20px;" role="menuitem">Strona 1</a></li>
-        </ul>
-      </div>
-      <div class="u-nav-container-collapse" id="1eda" role="region" aria-label="Menu panel">
-        <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
-          <div class="u-inner-container-layout u-sidenav-overflow">
-            <div class="u-menu-close" tabindex="-1" aria-label="Close menu"></div>
-            <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2">
-              <li class="u-nav-item"><a class="u-button-style u-nav-link" href="./"> </a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
-      </div>
-    </nav>
-  </div>
+<header>
+  <h1 class="typing">KOSTEK112</h1>
+  <hr />
 </header>
 
-<section class="u-clearfix u-section-1" id="sec-906d" style="padding-bottom: 0; margin-bottom: 0;">
-  <div class="u-sheet u-valign-middle u-sheet-1" style="padding-bottom: 0; margin-bottom: 0;">
-    <h1 class="u-align-center u-text u-text-1 fade-in">KOSTEK112</h1>
-
-    <div class="u-sheet u-valign-middle u-sheet-1">
-      <h2 class="u-align-center u-text u-text-default u-text-1 fade-in">Usługi</h2>
-
-      <div class="u-expanded-width u-layout-horizontal u-list u-list-1">
-        <div class="u-repeater u-repeater-1">
-          <div class="u-align-center u-container-style u-grey-75 u-list-item u-repeater-item u-list-item-1 fade-in">
-            <div class="u-container-layout u-valign-top-sm u-valign-top-xs">
-              <h4 class="u-align-center u-text u-text-2">Discord</h4>
-              <p class="u-align-center u-text u-text-default u-text-3">Mogę zrobić ładny layout serwera, aż po pisanie własnych botów!</p>
-            </div>
-          </div>
-
-          <div class="u-align-center u-container-style u-grey-75 u-list-item u-repeater-item u-list-item-2 fade-in">
-            <div class="u-container-layout u-valign-top-sm u-valign-top-xs">
-              <h4 class="u-align-center u-text u-text-4">Social Boost</h4>
-              <p class="u-align-center u-text u-text-default u-text-5">Pomoc w wypromowaniu sociali, od instagrama po facebooka!</p>
-            </div>
-          </div>
-
-          <div class="u-align-center u-container-style u-grey-75 u-list-item u-repeater-item u-list-item-3 fade-in">
-            <div class="u-container-layout u-valign-top-sm u-valign-top-xs">
-              <h4 class="u-align-center u-text u-text-6">Montaż</h4>
-              <p class="u-align-center u-text u-text-default u-text-7">Mogę pomóc z montażem filmów bądź tworzeniem grafik i miniaturek!</p>
-            </div>
-          </div>
-        </div>
-
-        <a class="u-absolute-vcenter u-gallery-nav u-gallery-nav-prev u-grey-60 u-hover-grey-50 u-icon-circle u-opacity u-opacity-70 u-spacing-10 u-text-white u-gallery-nav-1" href="#" role="button" aria-label="Previous"><span aria-hidden="true">
-          <svg viewBox="0 0 451.847 451.847"><path d="M97.141,225.92c0-8.095,3.091-16.192,9.259-22.366L300.689,9.27c12.359-12.359,32.397-12.359,44.751,0
-c12.354,12.354,12.354,32.388,0,44.748L173.525,225.92l171.903,171.909c12.354,12.354,12.354,32.391,0,44.744
-c-12.354,12.365-32.386,12.365-44.745,0l-194.29-194.281C100.226,242.115,97.141,234.018,97.141,225.92z"></path></svg></span>
-        <span class="sr-only">Previous</span>
-        </a>
-
-        <a class="u-absolute-vcenter u-gallery-nav u-gallery-nav-next u-grey-60 u-hover-grey-50 u-icon-circle u-opacity u-opacity-70 u-spacing-10 u-text-white u-gallery-nav-2" href="#" role="button" aria-label="Next"><span aria-hidden="true">
-          <svg viewBox="0 0 451.846 451.847"><path d="M345.441,248.292L151.154,442.573c-12.359,12.365-32.397,12.365-44.75,0c-12.354-12.354-12.354-32.391,0-44.744
-L278.318,225.92L106.409,54.017c-12.354-12.359-12.354-32.394,0-44.748c12.354-12.359,32.391-12.359,44.75,0l194.287,194.284
-c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,248.292z"></path></svg></span>
-          <span class="sr-only">Next</span>
-        </a>
-      </div>
-
-      <h1 class="u-align-center u-text u-text-default u-text-8 fade-in">
-        Aby skorzystać z moich usług napisz do mnie na discordzie!<br>nick: _kostek112_
-      </h1>
-    </div>
-  </div>
+<section>
+  <h2><span class="emoji">⚙️</span> Usługi</h2>
+  <ul class="services">
+    <li><span class="emoji">🤖</span> <span class="service-title">Discord</span><br />
+      Mogę zrobić ładny layout serwera, aż po pisanie własnych botów!</li>
+    <li><span class="emoji">📢</span> <span class="service-title">Social Boost</span><br />
+      Pomoc w wypromowaniu sociali, od Instagrama po Facebooka!</li>
+    <li><span class="emoji">🎬</span> <span class="service-title">Montaż</span><br />
+      Pomagam z montażem filmów bądź tworzeniem grafik i miniaturek!</li>
+  </ul>
+  <hr />
+  <p style="font-weight:bold; font-size:1.1rem; text-align:center;">
+    Aby skorzystać z moich usług, napisz do mnie na Discordzie!<br />
+    nick: <code>_kostek112_</code>
+  </p>
 </section>
 
-<footer class="u-align-center u-footer u-grey-80 u-footer" id="footer" style="background-color:#110000; color:#f00;">
-  <div class="u-sheet u-sheet-1">
-    <p class="u-small-text u-text u-text-variant u-text-1">© 2025 Kostek112. Wszelkie prawa zastrzeżone.<br>© 2025 Kostek112. All rights reserved.</p>
-  </div>
+<footer>
+  <p>© 2025 Kostek112. Wszelkie prawa zastrzeżone.</p>
+  <p>© 2025 Kostek112. All rights reserved.</p>
 </footer>
+
 </body>
 </html>
