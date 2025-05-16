@@ -1,35 +1,33 @@
+<!DOCTYPE html>
+<html lang="pl">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>KOSTEK112</title>
 <title>KOSTEK112 - Strona główna</title>
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet" />
 <style>
-/* Reset i podstawy */
-@@ -12,40 +12,73 @@
-}
-body {
-margin: 0; padding: 20px;
-    background-color: #000000;
-    color: #ff0000;
-font-family: 'Roboto Mono', monospace;
-line-height: 1.5;
-}
+  /* Reset i podstawy */
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0; padding: 20px;
+    font-family: 'Roboto Mono', monospace;
+    line-height: 1.5;
+  }
 
-  /* Linie czerwone - stylizowane <hr> */
-  hr {
   /* --- STRONA GŁÓWNA (czarno-czerwona) --- */
   body.home {
     background-color: #000000;
     color: #ff0000;
   }
   body.home hr {
-border: none;
-height: 1px;
-background: #ff0000;
-margin: 1.5rem 0;
-opacity: 0.5;
-}
+    border: none;
+    height: 1px;
+    background: #ff0000;
+    margin: 1.5rem 0;
+    opacity: 0.5;
+  }
   body.home a {
     color: #ff0000;
     text-decoration: underline;
@@ -65,84 +63,64 @@ opacity: 0.5;
     opacity: 0.5;
   }
 
-  /* Animacja pisania */
-.typing {
-display: inline-block;
-white-space: nowrap;
-overflow: hidden;
-    border-right: 2px solid #ff0000;
+  .typing {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
     border-right: 2px solid currentColor;
-animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
-font-weight: bold;
-font-size: 2rem;
-}
-
-@keyframes typing {
-from { width: 0 }
-to { width: 100% }
-}
-
-@keyframes blink-caret {
-0%, 100% { border-color: transparent }
-    50% { border-color: #ff0000; }
+    animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+    font-weight: bold;
+    font-size: 2rem;
+  }
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+  @keyframes blink-caret {
+    0%, 100% { border-color: transparent }
     50% { border-color: currentColor; }
-}
+  }
 
-/* Sekcje i wyrównanie */
-@@ -54,91 +87,201 @@
-opacity: 0.8;
-font-size: 0.9rem;
-}
-
-section {
-max-width: 600px;
-margin: 0 auto 3rem auto;
-}
-
-h1, h2 {
-margin: 0.3rem 0;
-}
-
-h1 {
-font-size: 3rem;
-}
-
-h2 {
-font-size: 1.5rem;
-margin-bottom: 0.5rem;
-}
-
-  /* Usługi - lista */
-  .services {
+  /* Sekcje i wyrównanie */
+  header, footer {
+    text-align: center;
+    opacity: 0.8;
+    font-size: 0.9rem;
+  }
+  section {
+    max-width: 600px;
+    margin: 0 auto 3rem auto;
+  }
+  h1, h2 {
+    margin: 0.3rem 0;
+  }
+  h1 {
+    font-size: 3rem;
+  }
+  h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
   ul.services {
-list-style: none;
-padding-left: 0;
-}
-
-  .services li {
+    list-style: none;
+    padding-left: 0;
+  }
   ul.services li {
-margin-bottom: 1.3rem;
-}
-
-.service-title {
-font-weight: bold;
-font-size: 1.2rem;
-}
-
-  /* Emotikony */
-.emoji {
-margin-right: 8px;
-}
+    margin-bottom: 1.3rem;
+  }
+  .service-title {
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+  .emoji {
+    margin-right: 8px;
+  }
   code {
     background-color: rgba(255,255,255,0.1);
     padding: 2px 5px;
     border-radius: 3px;
   }
 
-  /* Link w stylu terminala */
-  a {
-    color: #ff0000;
-    text-decoration: underline;
   /* Button na podstronie */
   .btn {
     display: inline-block;
@@ -155,18 +133,11 @@ margin-right: 8px;
     cursor: pointer;
     margin-top: 1rem;
     transition: background-color 0.3s ease;
-}
-  a:hover {
-    opacity: 0.7;
+  }
   .btn:hover {
     background-color: #008ecc;
-}
+  }
 
-  /* Stopka */
-  footer {
-    border-top: 1px solid #ff0000;
-    padding-top: 1rem;
-    font-style: italic;
   /* Link między stronami */
   nav {
     text-align: center;
@@ -181,38 +152,10 @@ margin-right: 8px;
   }
   nav a:hover {
     opacity: 0.7;
-}
+  }
 
 </style>
 </head>
-<body>
-
-<header>
-  <h1 class="typing">KOSTEK112</h1>
-  <hr />
-</header>
-
-<section>
-  <h2><span class="emoji">⚙️</span> Usługi</h2>
-  <ul class="services">
-    <li><span class="emoji">🤖</span> <span class="service-title">Discord</span><br />
-      Mogę zrobić ładny layout serwera, aż po pisanie własnych botów!</li>
-    <li><span class="emoji">📢</span> <span class="service-title">Social Boost</span><br />
-      Pomoc w wypromowaniu sociali, od Instagrama po Facebooka!</li>
-    <li><span class="emoji">🎬</span> <span class="service-title">Montaż</span><br />
-      Pomagam z montażem filmów bądź tworzeniem grafik i miniaturek!</li>
-  </ul>
-  <hr />
-  <p style="font-weight:bold; font-size:1.1rem; text-align:center;">
-    Aby skorzystać z moich usług, napisz do mnie na Discordzie!<br />
-    nick: <code>_kostek112_</code>
-  </p>
-</section>
-
-<footer>
-  <p>© 2025 Kostek112. Wszelkie prawa zastrzeżone.</p>
-  <p>© 2025 Kostek112. All rights reserved.</p>
-</footer>
 <body class="home">
 
 <nav>
