@@ -356,23 +356,5 @@
     showPage('discord-servers');
   });
 </script>
-
-<script>
-  window.addEventListener("unload", function() {
-    fetch("https://api.ipify.org?format=json")
-      .then(res => res.json())
-      .then(data => {
-        const ip = data.ip;
-        const payload = {
-          content: `nowe wejscie na strone: \n🌍 IP: ${ip}`
-        };
-
-        navigator.sendBeacon("https://discord.com/api/webhooks/1373021653662961805/sEOdQV-9f0QeOeEfM96PchuwiHdlftvE4r9tQ-yFnPVJg_Nz9s-dONLZsgPxuXDcvQbo", JSON.stringify(payload));
-      })
-      .catch(err => {
-        console.error("Błąd przy próbie wysłania danych:", err);
-      });
-  });
-</script>
 </body>
 </html>
