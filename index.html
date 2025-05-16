@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Kostek112 - Strona</title>
   <style>
+    /* --- Styl globalny czarno-zielony dla całej strony --- */
     body {
       background-color: #000000;
       color: #00FF00;
@@ -32,14 +33,21 @@
     nav a:hover {
       color: #00cc00;
     }
+
+    /* --- Ukrywanie sekcji --- */
     section {
       display: none;
       width: 100%;
       max-width: 800px;
-      text-align: center;
     }
     section.active {
       display: block;
+    }
+
+    /* --- Styl sekcji (wspólny) --- */
+    section {
+      text-align: center;
+      color: #00FF00;
     }
     h1 {
       font-weight: 900;
@@ -73,6 +81,8 @@
       color: #fff;
       box-shadow: 0 0 20px #00cc00;
     }
+
+    /* --- Serwery Discord - wygląd kart --- */
     .server-card {
       background: #0b0b0b;
       border: 2px solid #00FF00;
@@ -106,41 +116,94 @@
       margin-bottom: 22px;
       color: #00cc00;
     }
+
+    /* --- Usługi lista --- */
+    ul.services {
+      list-style: none;
+      padding: 0;
+      max-width: 600px;
+      margin: 0 auto 30px;
+      text-align: left;
+      font-size: 1.2rem;
+      line-height: 1.5;
+    }
+    ul.services li {
+      margin-bottom: 20px;
+    }
+    ul.services .emoji {
+      margin-right: 8px;
+    }
+    ul.services .service-title {
+      font-weight: 700;
+      font-size: 1.3rem;
+      color: #00cc00;
+    }
+
+    /* --- Nagłówek z animacją typing (opcjonalnie) --- */
+    header {
+      margin-bottom: 30px;
+    }
+    header h1 {
+      font-weight: 900;
+      font-size: 3.2rem;
+      text-shadow: 0 0 10px #00FF00;
+      letter-spacing: 0.1em;
+    }
+    hr {
+      border: 1px solid #00FF00;
+      margin: 20px auto;
+      max-width: 200px;
+      opacity: 0.5;
+    }
+
+    footer {
+      margin-top: 40px;
+      font-size: 0.9rem;
+      opacity: 0.6;
+      text-align: center;
+    }
+
   </style>
 </head>
 <body>
 
   <nav>
-    <a href="#" id="link-home" style="color:#00FF00;">STRONA GŁÓWNA</a>
-    <a href="#" id="link-social" style="color:#00FF00;">SOCIAL BOOST</a>
-    <a href="#" id="link-discord" style="color:#00FF00;">SERWERY DISCORD</a>
+    <a href="#" id="link-home" style="color:#00FF00;">🏠 Strona Główna</a>
+    <a href="#" id="link-services" style="color:#00FF00;">🛠️ Usługi</a>
+    <a href="#" id="link-social" style="color:#00FF00;">‼️ Social Boost ‼️</a>
+    <a href="#" id="link-discord" style="color:#00FF00;">🟢 Serwery Discord</a>
   </nav>
 
   <main>
+    <header>
+      <h1>KOSTEK112</h1>
+      <hr />
+    </header>
+
     <section id="home" class="active">
-      <h1>⚙️ Usługi</h1>
-      <ul class="services" style="list-style:none; padding:0; max-width:600px; margin: 0 auto 30px; color:#00FF00; text-align:left;">
-        <li style="margin-bottom:20px;">
-          <span style="font-size:1.5rem;">🤖</span> <strong>Discord</strong><br />
-          Mogę zrobić ładny layout serwera, aż po pisanie własnych botów!
-        </li>
-        <li style="margin-bottom:20px;">
-          <span style="font-size:1.5rem;">📢</span> <strong>Social Boost</strong><br />
-          Pomoc w wypromowaniu sociali, od Instagrama po Facebooka!
-        </li>
-        <li style="margin-bottom:20px;">
-          <span style="font-size:1.5rem;">🎬</span> <strong>Montaż</strong><br />
-          Pomagam z montażem filmów bądź tworzeniem grafik i miniaturek!
-        </li>
+      <h1>Witaj na stronie Kostek112!</h1>
+      <p>Tu możesz znaleźć różne usługi i oferty.</p>
+      <p>Kliknij powyżej, aby zobaczyć Social Boost, Usługi lub Serwery Discord.</p>
+    </section>
+
+    <section id="services">
+      <h1>🛠️ Usługi</h1>
+      <ul class="services">
+        <li><span class="emoji">🤖</span><span class="service-title">Discord</span><br />
+          Mogę zrobić ładny layout serwera, aż po pisanie własnych botów!</li>
+        <li><span class="emoji">📢</span><span class="service-title">Social Boost</span><br />
+          Pomoc w wypromowaniu sociali, od Instagrama po Facebooka!</li>
+        <li><span class="emoji">🎬</span><span class="service-title">Montaż</span><br />
+          Pomagam z montażem filmów bądź tworzeniem grafik i miniaturek!</li>
       </ul>
-      <p style="font-weight:bold; font-size:1.1rem; text-align:center; max-width:600px; margin: 0 auto;">
+      <p style="font-weight:bold; font-size:1.1rem;">
         Aby skorzystać z moich usług, napisz do mnie na Discordzie!<br />
         nick: <code>_kostek112_</code>
       </p>
     </section>
 
     <section id="social-boost">
-      <h1>SOCIAL BOOST</h1>
+      <h1>‼️ SOCIAL BOOST ‼️</h1>
       <p>🇵🇱</p>
       <p>🎯 Zdobądź popularność w sieci!<br/>
       🔥 Obserwacje, polubienia, wyświetlenia na:<br/>
@@ -159,7 +222,7 @@
     </section>
 
     <section id="discord-servers">
-      <h1>Serwery Discord - Oferta</h1>
+      <h1>🟢 Serwery Discord - Oferta</h1>
 
       <div class="server-card">
           <div class="server-name">📢 Serwer 1 - Reklamowy</div>
@@ -177,22 +240,27 @@
     </section>
   </main>
 
+  <footer>
+    <p>© 2025 Kostek112. Wszelkie prawa zastrzeżone.</p>
+    <p>© 2025 Kostek112. All rights reserved.</p>
+  </footer>
+
   <script>
+    // Przełączanie widoków sekcji
     function showPage(pageId) {
       document.querySelectorAll('section').forEach(section => {
         section.classList.remove('active');
       });
       document.getElementById(pageId).classList.add('active');
-
-      document.querySelectorAll('nav a').forEach(link => {
-        link.style.color = '#00FF00';
-      });
-      document.getElementById('link-' + pageId).style.color = '#00cc00';
     }
 
     document.getElementById('link-home').addEventListener('click', e => {
       e.preventDefault();
       showPage('home');
+    });
+    document.getElementById('link-services').addEventListener('click', e => {
+      e.preventDefault();
+      showPage('services');
     });
     document.getElementById('link-social').addEventListener('click', e => {
       e.preventDefault();
@@ -202,9 +270,6 @@
       e.preventDefault();
       showPage('discord-servers');
     });
-
-    showPage('home');
   </script>
-
 </body>
 </html>
