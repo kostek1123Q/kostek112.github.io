@@ -304,36 +304,57 @@
   </footer>
 
   <script>
-    // 🔒 Blokowanie kopiowania
-    document.addEventListener('copy', (e) => {
-      e.preventDefault();
-      alert("Kopiowanie wyłączone.");
-    });
+  // 🔒 Blokowanie kopiowania, prawego kliknięcia i zaznaczania
+  document.addEventListener('copy', (e) => {
+    e.preventDefault();
+    alert("Kopiowanie wyłączone.");
+  });
 
-    // 🔄 Przełączanie sekcji
-    function showPage(pageId) {
-      document.querySelectorAll('section').forEach(section => {
-        section.classList.remove('active');
-      });
-      document.getElementById(pageId).classList.add('active');
+  document.addEventListener('contextmenu', (e) => {
+    e.preventDefault();
+  });
+
+  document.addEventListener('selectstart', (e) => {
+    e.preventDefault();
+  });
+
+  // 🔒 Blokowanie skrótów klawiaturowych (Ctrl+U, Ctrl+S, F12, itd.)
+  document.addEventListener('keydown', function (e) {
+    if (
+      e.key === 'F12' ||
+      (e.ctrlKey && e.key.toLowerCase() === 'u') ||
+      (e.ctrlKey && e.key.toLowerCase() === 's') ||
+      (e.ctrlKey && e.shiftKey && ['i', 'j', 'c'].includes(e.key.toLowerCase()))
+    ) {
+      e.preventDefault();
+      alert("Te funkcje są zablokowane.");
     }
+  });
 
-    document.getElementById('link-home').addEventListener('click', e => {
-      e.preventDefault();
-      showPage('home');
+  // 🔄 Przełączanie sekcji
+  function showPage(pageId) {
+    document.querySelectorAll('section').forEach(section => {
+      section.classList.remove('active');
     });
-    document.getElementById('link-services').addEventListener('click', e => {
-      e.preventDefault();
-      showPage('services');
-    });
-    document.getElementById('link-social').addEventListener('click', e => {
-      e.preventDefault();
-      showPage('social-boost');
-    });
-    document.getElementById('link-discord').addEventListener('click', e => {
-      e.preventDefault();
-      showPage('discord-servers');
-    });
-  </script>
+    document.getElementById(pageId).classList.add('active');
+  }
+
+  document.getElementById('link-home').addEventListener('click', e => {
+    e.preventDefault();
+    showPage('home');
+  });
+  document.getElementById('link-services').addEventListener('click', e => {
+    e.preventDefault();
+    showPage('services');
+  });
+  document.getElementById('link-social').addEventListener('click', e => {
+    e.preventDefault();
+    showPage('social-boost');
+  });
+  document.getElementById('link-discord').addEventListener('click', e => {
+    e.preventDefault();
+    showPage('discord-servers');
+  });
+</script>
 </body>
 </html>
