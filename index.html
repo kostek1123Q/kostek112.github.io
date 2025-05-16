@@ -1,287 +1,219 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>KOSTEK112 - Strona główna</title>
-<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet" />
-<style>
-  /* Reset i podstawy */
-  * {
-    box-sizing: border-box;
-  }
-  body {
-    margin: 0; padding: 20px;
-    font-family: 'Roboto Mono', monospace;
-    line-height: 1.5;
-  }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kostek112 - Strona</title>
+  <style>
+    /* --- Styl globalny --- */
+    body {
+      background-color: #000000;
+      color: #00FF00;
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 20px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    nav {
+      margin-bottom: 30px;
+      text-align: center;
+    }
+    nav a {
+      font-weight: 700;
+      font-size: 1.2rem;
+      margin: 0 15px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: #00cc00;
+    }
 
-  /* --- STRONA GŁÓWNA (czarno-czerwona) --- */
-  body.home {
-    background-color: #000000;
-    color: #ff0000;
-  }
-  body.home hr {
-    border: none;
-    height: 1px;
-    background: #ff0000;
-    margin: 1.5rem 0;
-    opacity: 0.5;
-  }
-  body.home a {
-    color: #ff0000;
-    text-decoration: underline;
-  }
-  body.home a:hover {
-    opacity: 0.7;
-  }
+    /* --- Ukrywanie sekcji --- */
+    section {
+      display: none;
+      width: 100%;
+      max-width: 800px;
+    }
+    section.active {
+      display: block;
+    }
 
-  /* --- PODSTRONA (czarno-niebieska) --- */
-  body.social {
-    background-color: #000000;
-    color: #00aaff;
-  }
-  body.social hr {
-    border: none;
-    height: 1px;
-    background: #00aaff;
-    margin: 1.5rem 0;
-    opacity: 0.5;
-  }
-  body.social a {
-    color: #00aaff;
-    text-decoration: none;
-  }
-  body.social a:hover {
-    opacity: 0.8;
-  }
+    /* --- Styl strony głównej (przykład) --- */
+    #home {
+      text-align: center;
+    }
 
-  /* Linie i animacje */
-  hr {
-    border: none;
-    height: 1px;
-    opacity: 0.5;
-  }
+    /* --- Social Boost (przykład prostej sekcji) --- */
+    #social-boost {
+      text-align: center;
+      line-height: 1.6;
+      font-size: 1.3rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    #social-boost button {
+      margin-top: 15px;
+      background-color: #ff0000;
+      color: #000;
+      border: none;
+      padding: 12px 28px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 0 0 12px #ff0000aa;
+      transition: background-color 0.3s ease;
+    }
+    #social-boost button:hover {
+      background-color: #cc0000;
+      color: #fff;
+    }
 
-  .typing {
-    display: inline-block;
-    white-space: nowrap;
-    overflow: hidden;
-    border-right: 2px solid currentColor;
-    animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
-    font-weight: bold;
-    font-size: 2rem;
-  }
-  @keyframes typing {
-    from { width: 0 }
-    to { width: 100% }
-  }
-  @keyframes blink-caret {
-    0%, 100% { border-color: transparent }
-    50% { border-color: currentColor; }
-  }
+    /* --- Serwery Discord (Twój styl) --- */
+    #discord-servers {
+      color: #00FF00;
+      text-align: center;
+    }
+    #discord-servers h1 {
+      font-weight: 900;
+      font-size: 2.8rem;
+      margin-bottom: 25px;
+      text-shadow: 0 0 8px #00FF00;
+    }
+    .server-card {
+      background: #0b0b0b;
+      border: 2px solid #00FF00;
+      border-radius: 12px;
+      padding: 25px 30px;
+      margin: 15px auto;
+      width: 340px;
+      box-shadow: 0 0 15px #00FF00aa;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+    .server-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 25px #00ff00cc;
+    }
+    .server-name {
+      font-size: 1.9rem;
+      font-weight: 900;
+      margin-bottom: 10px;
+    }
+    .server-info {
+      font-size: 1.2rem;
+      margin-bottom: 12px;
+    }
+    .price {
+      font-size: 1.6rem;
+      font-weight: 900;
+      margin-bottom: 22px;
+      color: #00cc00;
+    }
+    .btn-buy {
+      background-color: #00FF00;
+      color: #000000;
+      font-weight: 700;
+      font-size: 1.15rem;
+      padding: 14px 30px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      text-decoration: none;
+      user-select: none;
+      transition: background-color 0.3s ease;
+      box-shadow: 0 0 10px #00ff00aa;
+    }
+    .btn-buy:hover {
+      background-color: #00cc00;
+      box-shadow: 0 0 20px #00cc00;
+    }
 
-  /* Sekcje i wyrównanie */
-  header, footer {
-    text-align: center;
-    opacity: 0.8;
-    font-size: 0.9rem;
-  }
-  section {
-    max-width: 600px;
-    margin: 0 auto 3rem auto;
-  }
-  h1, h2 {
-    margin: 0.3rem 0;
-  }
-  h1 {
-    font-size: 3rem;
-  }
-  h2 {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
-  }
-  ul.services {
-    list-style: none;
-    padding-left: 0;
-  }
-  ul.services li {
-    margin-bottom: 1.3rem;
-  }
-  .service-title {
-    font-weight: bold;
-    font-size: 1.2rem;
-  }
-  .emoji {
-    margin-right: 8px;
-  }
-  code {
-    background-color: rgba(255,255,255,0.1);
-    padding: 2px 5px;
-    border-radius: 3px;
-  }
-
-  /* Button na podstronie */
-  .btn {
-    display: inline-block;
-    background-color: #00aaff;
-    color: #000;
-    font-weight: bold;
-    padding: 12px 25px;
-    border-radius: 6px;
-    text-decoration: none;
-    cursor: pointer;
-    margin-top: 1rem;
-    transition: background-color 0.3s ease;
-  }
-  .btn:hover {
-    background-color: #008ecc;
-  }
-
-  /* Link między stronami */
-  nav {
-    text-align: center;
-    margin-bottom: 2rem;
-  }
-  nav a {
-    color: currentColor;
-    margin: 0 15px;
-    font-weight: bold;
-    font-size: 1rem;
-    text-decoration: underline;
-  }
-  nav a:hover {
-    opacity: 0.7;
-  }
-
-</style>
+  </style>
 </head>
-<body class="home">
+<body>
 
-<nav>
-  <a href="#" id="link-home">Strona główna</a> |
-  <a href="#" id="link-social">!SOCIAL BOOST</a>
-</nav>
+  <nav>
+    <a href="#" id="link-home" style="color:#00FF00;">🏠 Strona Główna</a>
+    <a href="#" id="link-social" style="color:#ff0000;">‼️ SOCIAL BOOST ‼️</a>
+    <a href="#" id="link-discord" style="color:#00FF00;">🟢 SERWERY DISCORD</a>
+  </nav>
 
-<div id="content">
-
-  <!-- STRONA GŁÓWNA -->
-  <header>
-    <h1 class="typing">KOSTEK112</h1>
-    <hr />
-  </header>
-
-  <section>
-    <h2><span class="emoji">⚙️</span> Usługi</h2>
-    <ul class="services">
-      <li><span class="emoji">🤖</span> <span class="service-title">Discord</span><br />
-        Mogę zrobić ładny layout serwera, aż po pisanie własnych botów!</li>
-      <li><span class="emoji">📢</span> <span class="service-title">Social Boost</span><br />
-        Pomoc w wypromowaniu sociali, od Instagrama po Facebooka!</li>
-      <li><span class="emoji">🎬</span> <span class="service-title">Montaż</span><br />
-        Pomagam z montażem filmów bądź tworzeniem grafik i miniaturek!</li>
-    </ul>
-    <hr />
-    <p style="font-weight:bold; font-size:1.1rem; text-align:center;">
-      Aby skorzystać z moich usług, napisz do mnie na Discordzie!<br />
-      nick: <code>_kostek112_</code>
-    </p>
-  </section>
-
-  <footer>
-    <p>© 2025 Kostek112. Wszelkie prawa zastrzeżone.</p>
-    <p>© 2025 Kostek112. All rights reserved.</p>
-  </footer>
-
-</div>
-
-<script>
-  // Obsługa przełączania stron (home <-> social)
-  const content = document.getElementById('content');
-  const body = document.body;
-  const linkHome = document.getElementById('link-home');
-  const linkSocial = document.getElementById('link-social');
-
-  const homeHTML = `
-    <header>
-      <h1 class="typing">KOSTEK112</h1>
-      <hr />
-    </header>
-    <section>
-      <h2><span class="emoji">⚙️</span> Usługi</h2>
-      <ul class="services">
-        <li><span class="emoji">🤖</span> <span class="service-title">Discord</span><br />
-          Mogę zrobić ładny layout serwera, aż po pisanie własnych botów!</li>
-        <li><span class="emoji">📢</span> <span class="service-title">Social Boost</span><br />
-          Pomoc w wypromowaniu sociali, od Instagrama po Facebooka!</li>
-        <li><span class="emoji">🎬</span> <span class="service-title">Montaż</span><br />
-          Pomagam z montażem filmów bądź tworzeniem grafik i miniaturek!</li>
-      </ul>
-      <hr />
-      <p style="font-weight:bold; font-size:1.1rem; text-align:center;">
-        Aby skorzystać z moich usług, napisz do mnie na Discordzie!<br />
-        nick: <code>_kostek112_</code>
-      </p>
+  <main>
+    <section id="home" class="active">
+      <h1>Witaj na stronie Kostek112!</h1>
+      <p>Tu możesz znaleźć różne usługi i oferty.</p>
+      <p>Kliknij powyżej, aby zobaczyć Social Boost lub Serwery Discord.</p>
     </section>
-    <footer>
-      <p>© 2025 Kostek112. Wszelkie prawa zastrzeżone.</p>
-      <p>© 2025 Kostek112. All rights reserved.</p>
-    </footer>
-  `;
 
-  const socialHTML = `
-    <header>
-      <h1 class="typing"># !SOCIAL BOOST</h1>
-      <hr />
-    </header>
-    <section>
-      <h2>🇵🇱 Polska</h2>
+    <section id="social-boost">
+      <h1>‼️ SOCIAL BOOST ‼️</h1>
+      <p>🇵🇱</p>
       <p>🎯 Zdobądź popularność w sieci!<br/>
       🔥 Obserwacje, polubienia, wyświetlenia na:<br/>
       📸 Instagram • 🎵 TikTok • ▶️ YouTube • 📘 Facebook<br/>
       💸 Najniższe ceny na rynku!<br/>
       🚀 Błyskawiczna realizacja • 100% anonimowo • Bezpiecznie</p>
-
       <p>💬 Dołącz teraz i zacznij budować swoją markę online!</p>
-
-      <hr />
-
-      <h2>🇬🇧 English</h2>
+      <p>🇬🇧</p>
       <p>🚀 Boost Your Online Presence!<br/>
       💥 Get followers, likes & views on:<br/>
       📸 Instagram • 🎵 TikTok • ▶️ YouTube • 📘 Facebook<br/>
       💸 Lowest prices guaranteed!<br/>
       ⚡ Fast delivery • 100% safe • Fully anonymous</p>
-
       <p>💬 Join now and grow your social media like a pro!</p>
-
-      <a href="https://discord.gg/FkNAZE8BcE" target="_blank" rel="noopener" class="btn">Dołącz na Discord</a>
+      <button onclick="window.open('https://discord.gg/FkNAZE8BcE', '_blank', 'noopener')">DOŁĄCZ NA DISCORD</button>
     </section>
-    <footer>
-      <p>© 2025 Kostek112. Wszelkie prawa zastrzeżone.</p>
-      <p>© 2025 Kostek112. All rights reserved.</p>
-    </footer>
-  `;
 
-  function showHome() {
-    body.className = 'home';
-    content.innerHTML = homeHTML;
-  }
-  function showSocial() {
-    body.className = 'social';
-    content.innerHTML = socialHTML;
-  }
+    <section id="discord-servers">
+      <h1>🟢 Serwery Discord - Oferta</h1>
 
-  linkHome.addEventListener('click', e => {
-    e.preventDefault();
-    showHome();
-  });
-  linkSocial.addEventListener('click', e => {
-    e.preventDefault();
-    showSocial();
-  });
+      <div class="server-card">
+          <div class="server-name">📢 Serwer 1 - Reklamowy</div>
+          <div class="server-info">👥 Ponad 530 osób</div>
+          <div class="price">💰 40 PLN</div>
+          <a href="https://discord.gg/FZBydEggmH" class="btn-buy" target="_blank" rel="noopener noreferrer">🛒 Dołącz / Kup</a>
+      </div>
 
-</script>
+      <div class="server-card">
+          <div class="server-name">🛒 Serwer 2 - Shop</div>
+          <div class="server-info">👥 Ponad 300 osób</div>
+          <div class="price">💰 30 PLN</div>
+          <a href="https://discord.gg/63Dw9SWW6C" class="btn-buy" target="_blank" rel="noopener noreferrer">🛒 Dołącz / Kup</a>
+      </div>
+    </section>
+  </main>
 
+  <script>
+    // Prosta funkcja przełączająca widoki
+    function showPage(pageId) {
+      document.querySelectorAll('section').forEach(section => {
+        section.classList.remove('active');
+      });
+      document.getElementById(pageId).classList.add('active');
+    }
+
+    // Obsługa kliknięć w menu
+    document.getElementById('link-home').addEventListener('click', (e) => {
+      e.preventDefault();
+      showPage('home');
+    });
+    document.getElementById('link-social').addEventListener('click', (e) => {
+      e.preventDefault();
+      showPage('social-boost');
+    });
+    document.getElementById('link-discord').addEventListener('click', (e) => {
+      e.preventDefault();
+      showPage('discord-servers');
+    });
+  </script>
 </body>
 </html>
