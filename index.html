@@ -16,11 +16,16 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+      user-select: none;
+      -webkit-user-select: none;
+      -ms-user-select: none;
     }
+
     nav {
       margin-bottom: 30px;
       text-align: center;
     }
+
     nav a {
       font-weight: 700;
       font-size: 1.2rem;
@@ -30,37 +35,40 @@
       transition: color 0.3s ease;
       color: #00FF00;
     }
+
     nav a:hover {
       color: #00cc00;
     }
 
-    /* --- Ukrywanie sekcji --- */
     section {
       display: none;
       width: 100%;
       max-width: 800px;
     }
+
     section.active {
       display: block;
     }
 
-    /* --- Styl sekcji (wspólny) --- */
     section {
       text-align: center;
       color: #00FF00;
     }
+
     h1 {
       font-weight: 900;
       font-size: 2.8rem;
       margin-bottom: 25px;
       text-shadow: 0 0 8px #00FF00;
     }
+
     p {
       font-size: 1.3rem;
       line-height: 1.6;
       max-width: 600px;
       margin: 0 auto 15px;
     }
+
     button, .btn-buy {
       background-color: #00FF00;
       color: #000000;
@@ -76,13 +84,13 @@
       text-decoration: none;
       display: inline-block;
     }
+
     button:hover, .btn-buy:hover {
       background-color: #00cc00;
       color: #fff;
       box-shadow: 0 0 20px #00cc00;
     }
 
-    /* --- Serwery Discord - wygląd kart --- */
     .server-card {
       background: #0b0b0b;
       border: 2px solid #00FF00;
@@ -97,19 +105,23 @@
       text-align: center;
       transition: transform 0.3s ease;
     }
+
     .server-card:hover {
       transform: scale(1.05);
       box-shadow: 0 0 25px #00ff00cc;
     }
+
     .server-name {
       font-size: 1.9rem;
       font-weight: 900;
       margin-bottom: 10px;
     }
+
     .server-info {
       font-size: 1.2rem;
       margin-bottom: 12px;
     }
+
     .price {
       font-size: 1.6rem;
       font-weight: 900;
@@ -117,7 +129,6 @@
       color: #00cc00;
     }
 
-    /* --- Usługi lista --- */
     ul.services {
       list-style: none;
       padding: 0;
@@ -127,28 +138,32 @@
       font-size: 1.2rem;
       line-height: 1.5;
     }
+
     ul.services li {
       margin-bottom: 20px;
     }
+
     ul.services .emoji {
       margin-right: 8px;
     }
+
     ul.services .service-title {
       font-weight: 700;
       font-size: 1.3rem;
       color: #00cc00;
     }
 
-    /* --- Nagłówek z animacją typing (opcjonalnie) --- */
     header {
       margin-bottom: 30px;
     }
+
     header h1 {
       font-weight: 900;
       font-size: 3.2rem;
       text-shadow: 0 0 10px #00FF00;
       letter-spacing: 0.1em;
     }
+
     hr {
       border: 1px solid #00FF00;
       margin: 20px auto;
@@ -163,15 +178,58 @@
       text-align: center;
     }
 
+    /* 📱 Responsywność dla telefonów */
+    @media screen and (max-width: 600px) {
+      body {
+        padding: 10px;
+        font-size: 0.95rem;
+      }
+
+      nav a {
+        display: block;
+        margin: 10px 0;
+        font-size: 1.1rem;
+      }
+
+      header h1 {
+        font-size: 2rem;
+      }
+
+      section {
+        padding: 10px;
+      }
+
+      .server-card {
+        width: 100%;
+        padding: 20px;
+      }
+
+      .server-name {
+        font-size: 1.5rem;
+      }
+
+      .price {
+        font-size: 1.3rem;
+      }
+
+      ul.services {
+        font-size: 1rem;
+      }
+
+      button, .btn-buy {
+        font-size: 1rem;
+        padding: 10px 20px;
+      }
+    }
   </style>
 </head>
-<body>
+<body oncontextmenu="return false" ondragstart="return false" onselectstart="return false">
 
   <nav>
-    <a href="#" id="link-home" style="color:#00FF00;">🏠 Strona Główna</a>
-    <a href="#" id="link-services" style="color:#00FF00;">🛠️ Usługi</a>
-    <a href="#" id="link-social" style="color:#00FF00;">‼ Social Boost</a>
-    <a href="#" id="link-discord" style="color:#00FF00;">🟢 Serwery Discord</a>
+    <a href="#" id="link-home">Strona Główna</a>
+    <a href="#" id="link-services">Usługi</a>
+    <a href="#" id="link-social">Social Boost</a>
+    <a href="#" id="link-discord">Serwery Discord</a>
   </nav>
 
   <main>
@@ -246,7 +304,13 @@
   </footer>
 
   <script>
-    // Przełączanie widoków sekcji
+    // 🔒 Blokowanie kopiowania
+    document.addEventListener('copy', (e) => {
+      e.preventDefault();
+      alert("Kopiowanie wyłączone.");
+    });
+
+    // 🔄 Przełączanie sekcji
     function showPage(pageId) {
       document.querySelectorAll('section').forEach(section => {
         section.classList.remove('active');
