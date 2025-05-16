@@ -3,90 +3,47 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="utf-8">
-  <meta name="keywords" content="Firma osobowa, Samozatrudnienie, Jednoosobowa działalność, Co mówią nasi klienci, Przedsiębiorstwo jednoosobowe, O nas i naszej pracy, Działalność jednoosobowa, Samodzielny biznes, Jak rozpocząć działalność jednoosobową?, Własna działalność, Nasz zespół, Nasi Klienci, Skontaktuj się z nami">
-  <meta name="description" content="">
   <title>kostek112</title>
   <link rel="stylesheet" href="nicepage.css" media="screen">
   <link rel="stylesheet" href="index.css" media="screen">
-  <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
-  <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
-  <meta name="generator" content="Nicepage 7.8.23, nicepage.com">
-  <!-- Montserrat from Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-  <script type="application/ld+json">{
-      "@context": "http://schema.org",
-      "@type": "Organization",
-      "name": "",
-      "url": "/"
-  }</script>
-  <meta name="theme-color" content="#478ac9">
-  <meta property="og:title" content="kostek112">
-  <meta property="og:type" content="website">
-  <link rel="canonical" href="/">
-  <meta data-intl-tel-input-cdn-path="intlTelInput/">
-  
+
   <style>
-    body.u-body {
-      background-color: #000000 !important;
-      color: #ff0000 !important;
-      font-family: 'Montserrat', sans-serif !important;
+    /* Animacja fade-in */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
     }
-    a, a:visited {
-      color: #ff4444 !important;
-      text-decoration: none;
-    }
-    a:hover, a:focus {
-      color: #ff7777 !important;
-      text-decoration: underline;
-    }
-    h1, h2, h4 {
-      color: #ff4444 !important;
-      text-shadow: 0 0 6px #ff0000;
-      font-weight: 700;
-    }
-    .u-section-1, .u-sheet-1, .u-container-layout-1, .u-container-layout-2, .u-container-layout-3 {
-      background-color: #110000 !important;
-      box-shadow: 0 0 15px #ff0000;
-      border-radius: 8px;
-    }
-    .u-list-item.u-repeater-item {
-      background-color: #220000 !important;
-      border-radius: 6px;
-    }
-    .u-text-default {
-      color: #ff5555 !important;
-    }
-    header.u-header, footer.u-footer {
-      background-color: #110000 !important;
-      box-shadow: 0 0 12px #ff0000;
-      color: #ff4444 !important;
-    }
-    .u-menu-1 .u-nav-link {
-      color: #ff4444 !important;
-    }
-    .u-menu-1 .u-nav-link:hover {
-      color: #ff7777 !important;
-    }
-    .u-gallery-nav-prev, .u-gallery-nav-next {
-      background-color: #330000 !important;
-      border: 1px solid #ff0000 !important;
-      color: #ff0000 !important;
-    }
-    .u-gallery-nav-prev:hover, .u-gallery-nav-next:hover {
-      background-color: #550000 !important;
-      color: #ff7777 !important;
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
   </style>
-</head>
-<body data-home-page="https://website6509626.nicepage.io/Strona-1.html?version=683a428d-4092-1eb7-61fa-4f5c64ed9197" data-home-page-title="Strona 1" data-path-to-root="./" data-include-products="false" class="u-body u-grey-90 u-xl-mode" data-lang="pl">
 
+  <script class="u-script" type="text/javascript" src="jquery.js" defer></script>
+  <script class="u-script" type="text/javascript" src="nicepage.js" defer></script>
+  
+  <script>
+    // Animacja fade-in po załadowaniu strony
+    document.addEventListener("DOMContentLoaded", () => {
+      const elements = document.querySelectorAll('.fade-in');
+      elements.forEach(el => {
+        el.classList.add('visible');
+      });
+    });
+  </script>
+  
+  <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Open+Sans:300,400,500,600,700,800">
+</head>
+
+<body data-lang="pl" class="u-body u-grey-90 u-xl-mode" style="background-color:#000; color:#f00;">
 <header class="u-clearfix u-header u-header" id="header">
-  <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-sheet-1">
+  <div class="u-sheet u-valign-middle u-sheet-1">
     <nav class="u-menu u-menu-one-level u-offcanvas u-menu-1" role="navigation" aria-label="Menu navigation">
       <div class="menu-collapse" style="font-size: 1rem; letter-spacing: 0px;">
         <a class="u-button-style u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-top-bottom-menu-spacing u-hamburger-link u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="#" tabindex="-1" aria-label="Open menu" aria-controls="1eda">
           <svg class="u-svg-link" viewBox="0 0 24 24"><use xlink:href="#menu-hamburger"></use></svg>
-          <svg class="u-svg-content" version="1.1" id="menu-hamburger" viewBox="0 0 16 16" x="0px" y="0px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g><rect y="1" width="16" height="2"></rect><rect y="7" width="16" height="2"></rect><rect y="13" width="16" height="2"></rect></g></svg>
+          <svg class="u-svg-content" id="menu-hamburger" viewBox="0 0 16 16" x="0" y="0"><g><rect y="1" width="16" height="2"></rect><rect y="7" width="16" height="2"></rect><rect y="13" width="16" height="2"></rect></g></svg>
         </a>
       </div>
       <div class="u-nav-container">
@@ -110,58 +67,62 @@
 </header>
 
 <section class="u-clearfix u-section-1" id="sec-906d" style="padding-bottom: 0; margin-bottom: 0;">
-  <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-sheet-1" style="padding-bottom: 0; margin-bottom: 0;">
-    <h1 class="u-align-center u-text u-text-1">KOSTEK112</h1>
-    <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
-      <h2 class="u-align-center u-text u-text-default u-text-1">Usługi </h2>
+  <div class="u-sheet u-valign-middle u-sheet-1" style="padding-bottom: 0; margin-bottom: 0;">
+    <h1 class="u-align-center u-text u-text-1 fade-in">KOSTEK112</h1>
+
+    <div class="u-sheet u-valign-middle u-sheet-1">
+      <h2 class="u-align-center u-text u-text-default u-text-1 fade-in">Usługi</h2>
+
       <div class="u-expanded-width u-layout-horizontal u-list u-list-1">
         <div class="u-repeater u-repeater-1">
-          <div class="u-align-center u-container-style u-grey-75 u-list-item u-repeater-item u-list-item-1">
-            <div class="u-container-layout u-similar-container u-valign-top-sm u-valign-top-xs u-container-layout-1">
-              <span class="u-align-center u-black u-file-icon u-icon u-icon-circle u-icon-1"><img src="images/pngimg.com-discord_PNG31-05e36341.png" alt=""></span>
-              <h4 class="u-align-center u-text u-text-2">Discord </h4>
-              <p class="u-align-center u-text u-text-default u-text-3">Mogę zrobić ładny layout serwera,​ aż po pisanie własnych botów!</p>
+          <div class="u-align-center u-container-style u-grey-75 u-list-item u-repeater-item u-list-item-1 fade-in">
+            <div class="u-container-layout u-valign-top-sm u-valign-top-xs">
+              <h4 class="u-align-center u-text u-text-2">Discord</h4>
+              <p class="u-align-center u-text u-text-default u-text-3">Mogę zrobić ładny layout serwera, aż po pisanie własnych botów!</p>
             </div>
           </div>
-          <div class="u-align-center u-container-style u-grey-75 u-list-item u-repeater-item u-list-item-2">
-            <div class="u-container-layout u-similar-container u-valign-top-sm u-valign-top-xs u-container-layout-2">
-              <span class="u-align-center u-black u-file-icon u-icon u-icon-circle u-text-white u-icon-2"><img src="images/5099413-200-30a61e21.png" alt=""></span>
+
+          <div class="u-align-center u-container-style u-grey-75 u-list-item u-repeater-item u-list-item-2 fade-in">
+            <div class="u-container-layout u-valign-top-sm u-valign-top-xs">
               <h4 class="u-align-center u-text u-text-4">Social Boost</h4>
               <p class="u-align-center u-text u-text-default u-text-5">Pomoc w wypromowaniu sociali, od instagrama po facebooka!</p>
             </div>
           </div>
-          <div class="u-align-center u-container-style u-grey-75 u-list-item u-repeater-item u-list-item-3">
-            <div class="u-container-layout u-similar-container u-valign-top-sm u-valign-top-xs u-container-layout-3">
-              <span class="u-align-center u-black u-file-icon u-icon u-icon-circle u-text-white u-icon-3"><img src="images/6553874-22a5e87a.png" alt=""></span>
-              <h4 class="u-align-center u-text u-text-6">Monataż </h4>
+
+          <div class="u-align-center u-container-style u-grey-75 u-list-item u-repeater-item u-list-item-3 fade-in">
+            <div class="u-container-layout u-valign-top-sm u-valign-top-xs">
+              <h4 class="u-align-center u-text u-text-6">Montaż</h4>
               <p class="u-align-center u-text u-text-default u-text-7">Mogę pomóc z montażem filmów bądź tworzeniem grafik i miniaturek!</p>
             </div>
           </div>
         </div>
-        <a class="u-absolute-vcenter u-gallery-nav u-gallery-nav-prev u-grey-60 u-hover-grey-50 u-icon-circle u-opacity u-opacity-70 u-spacing-10 u-text-white u-gallery-nav-1" href="#" role="button"><span aria-hidden="true">
+
+        <a class="u-absolute-vcenter u-gallery-nav u-gallery-nav-prev u-grey-60 u-hover-grey-50 u-icon-circle u-opacity u-opacity-70 u-spacing-10 u-text-white u-gallery-nav-1" href="#" role="button" aria-label="Previous"><span aria-hidden="true">
           <svg viewBox="0 0 451.847 451.847"><path d="M97.141,225.92c0-8.095,3.091-16.192,9.259-22.366L300.689,9.27c12.359-12.359,32.397-12.359,44.751,0
-c12.354,12.354,12.354,32.388,0,44.743L172.756,225.92l172.684,172.908c12.354,12.359,12.354,32.395,0,44.751
-c-12.354,12.354-32.397,12.354-44.751,0L106.4,248.279C100.234,242.103,97.141,234.016,97.141,225.92z"/></svg>
-        </span>
+c12.354,12.354,12.354,32.388,0,44.748L173.525,225.92l171.903,171.909c12.354,12.354,12.354,32.391,0,44.744
+c-12.354,12.365-32.386,12.365-44.745,0l-194.29-194.281C100.226,242.115,97.141,234.018,97.141,225.92z"></path></svg></span>
         <span class="sr-only">Previous</span>
         </a>
-        <a class="u-absolute-vcenter u-gallery-nav u-gallery-nav-next u-grey-60 u-hover-grey-50 u-icon-circle u-opacity u-opacity-70 u-spacing-10 u-text-white u-gallery-nav-2" href="#" role="button"><span aria-hidden="true">
-          <svg viewBox="0 0 451.847 451.847"><path d="M344.708,225.92c0,8.095-3.091,16.192-9.259,22.366L141.159,442.5c-12.359,12.359-32.397,12.359-44.751,0
-c-12.354-12.354-12.354-32.388,0-44.743l172.684-172.908L96.408,52.939c-12.354-12.359-12.354-32.395,0-44.751
-c12.354-12.354,32.397-12.354,44.751,0l193.28,193.284C341.618,209.728,344.708,217.823,344.708,225.92z"/></svg>
-        </span>
-        <span class="sr-only">Next</span>
+
+        <a class="u-absolute-vcenter u-gallery-nav u-gallery-nav-next u-grey-60 u-hover-grey-50 u-icon-circle u-opacity u-opacity-70 u-spacing-10 u-text-white u-gallery-nav-2" href="#" role="button" aria-label="Next"><span aria-hidden="true">
+          <svg viewBox="0 0 451.846 451.847"><path d="M345.441,248.292L151.154,442.573c-12.359,12.365-32.397,12.365-44.75,0c-12.354-12.354-12.354-32.391,0-44.744
+L278.318,225.92L106.409,54.017c-12.354-12.359-12.354-32.394,0-44.748c12.354-12.359,32.391-12.359,44.75,0l194.287,194.284
+c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,248.292z"></path></svg></span>
+          <span class="sr-only">Next</span>
         </a>
       </div>
+
+      <h1 class="u-align-center u-text u-text-default u-text-8 fade-in">
+        Aby skorzystać z moich usług napisz do mnie na discordzie!<br>nick: _kostek112_
+      </h1>
     </div>
   </div>
 </section>
 
-<footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-240b">
-  <div class="u-clearfix u-sheet u-sheet-1">
-    <p class="u-text u-text-default u-text-1">© Kostek112 2023. Wszelkie prawa zastrzeżone.</p>
+<footer class="u-align-center u-footer u-grey-80 u-footer" id="footer" style="background-color:#110000; color:#f00;">
+  <div class="u-sheet u-sheet-1">
+    <p class="u-small-text u-text u-text-variant u-text-1">© 2025 Kostek112. Wszelkie prawa zastrzeżone.<br>© 2025 Kostek112. All rights reserved.</p>
   </div>
 </footer>
-
 </body>
 </html>
