@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Kostek112 - Strona</title>
   <style>
-    /* --- Styl globalny --- */
+    /* --- Styl globalny czarno-zielony dla całej strony --- */
     body {
       background-color: #000000;
       color: #00FF00;
@@ -28,6 +28,7 @@
       cursor: pointer;
       text-decoration: none;
       transition: color 0.3s ease;
+      color: #00FF00;
     }
     nav a:hover {
       color: #00cc00;
@@ -43,48 +44,45 @@
       display: block;
     }
 
-    /* --- Styl strony głównej (przykład) --- */
-    #home {
+    /* --- Styl strony głównej, Social Boost i Serwery Discord - wspólny czarno-zielony styl --- */
+    section {
       text-align: center;
-    }
-
-    /* --- Social Boost (przykład prostej sekcji) --- */
-    #social-boost {
-      text-align: center;
-      line-height: 1.6;
-      font-size: 1.3rem;
-      max-width: 600px;
-      margin: 0 auto;
-    }
-    #social-boost button {
-      margin-top: 15px;
-      background-color: #ff0000;
-      color: #000;
-      border: none;
-      padding: 12px 28px;
-      font-weight: 700;
-      font-size: 1.1rem;
-      border-radius: 10px;
-      cursor: pointer;
-      box-shadow: 0 0 12px #ff0000aa;
-      transition: background-color 0.3s ease;
-    }
-    #social-boost button:hover {
-      background-color: #cc0000;
-      color: #fff;
-    }
-
-    /* --- Serwery Discord (Twój styl) --- */
-    #discord-servers {
       color: #00FF00;
-      text-align: center;
     }
-    #discord-servers h1 {
+    h1 {
       font-weight: 900;
       font-size: 2.8rem;
       margin-bottom: 25px;
       text-shadow: 0 0 8px #00FF00;
     }
+    p {
+      font-size: 1.3rem;
+      line-height: 1.6;
+      max-width: 600px;
+      margin: 0 auto 15px;
+    }
+    button, .btn-buy {
+      background-color: #00FF00;
+      color: #000000;
+      font-weight: 700;
+      font-size: 1.1rem;
+      padding: 12px 28px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 0 0 12px #00FF00aa;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      user-select: none;
+      text-decoration: none;
+      display: inline-block;
+    }
+    button:hover, .btn-buy:hover {
+      background-color: #00cc00;
+      color: #fff;
+      box-shadow: 0 0 20px #00cc00;
+    }
+
+    /* --- Serwery Discord - wygląd kart --- */
     .server-card {
       background: #0b0b0b;
       border: 2px solid #00FF00;
@@ -118,32 +116,13 @@
       margin-bottom: 22px;
       color: #00cc00;
     }
-    .btn-buy {
-      background-color: #00FF00;
-      color: #000000;
-      font-weight: 700;
-      font-size: 1.15rem;
-      padding: 14px 30px;
-      border: none;
-      border-radius: 10px;
-      cursor: pointer;
-      text-decoration: none;
-      user-select: none;
-      transition: background-color 0.3s ease;
-      box-shadow: 0 0 10px #00ff00aa;
-    }
-    .btn-buy:hover {
-      background-color: #00cc00;
-      box-shadow: 0 0 20px #00cc00;
-    }
-
   </style>
 </head>
 <body>
 
   <nav>
     <a href="#" id="link-home" style="color:#00FF00;">🏠 Strona Główna</a>
-    <a href="#" id="link-social" style="color:#ff0000;">‼️ SOCIAL BOOST ‼️</a>
+    <a href="#" id="link-social" style="color:#00FF00;">‼️ SOCIAL BOOST ‼️</a>
     <a href="#" id="link-discord" style="color:#00FF00;">🟢 SERWERY DISCORD</a>
   </nav>
 
@@ -193,24 +172,28 @@
   </main>
 
   <script>
-    // Prosta funkcja przełączająca widoki
+    // Przełączanie widoków sekcji
     function showPage(pageId) {
       document.querySelectorAll('section').forEach(section => {
         section.classList.remove('active');
       });
       document.getElementById(pageId).classList.add('active');
+
+      // Ustaw kolor aktywnego linka na zielony, reszta też zielona
+      document.querySelectorAll('nav a').forEach(link => {
+        link.style.color = '#00FF00';
+      });
     }
 
-    // Obsługa kliknięć w menu
-    document.getElementById('link-home').addEventListener('click', (e) => {
+    document.getElementById('link-home').addEventListener('click', e => {
       e.preventDefault();
       showPage('home');
     });
-    document.getElementById('link-social').addEventListener('click', (e) => {
+    document.getElementById('link-social').addEventListener('click', e => {
       e.preventDefault();
       showPage('social-boost');
     });
-    document.getElementById('link-discord').addEventListener('click', (e) => {
+    document.getElementById('link-discord').addEventListener('click', e => {
       e.preventDefault();
       showPage('discord-servers');
     });
