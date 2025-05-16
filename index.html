@@ -39,16 +39,12 @@
       display: none;
       width: 100%;
       max-width: 800px;
+      text-align: center;
     }
     section.active {
       display: block;
     }
 
-    /* --- Styl strony głównej, Social Boost i Serwery Discord - wspólny czarno-zielony styl --- */
-    section {
-      text-align: center;
-      color: #00FF00;
-    }
     h1 {
       font-weight: 900;
       font-size: 2.8rem;
@@ -121,37 +117,17 @@
 <body>
 
   <nav>
-    <a href="#" id="link-social" style="color:#00FF00;">SOCIAL BOOST</a>
     <a href="#" id="link-home" style="color:#00FF00;">STRONA GŁÓWNA</a>
+    <a href="#" id="link-social" style="color:#00FF00;">SOCIAL BOOST</a>
     <a href="#" id="link-discord" style="color:#00FF00;">SERWERY DISCORD</a>
   </nav>
 
   <main>
-    <header>
-  <h1 class="typing">KOSTEK112</h1>
-  <hr />
-</header>
-
-<section>
-  <h1><span class="emoji">⚙️</span> Usługi</h2>
-  <ul class="services">
-    <li><span class="emoji">🤖</span> <span class="service-title">Discord</span><br />
-      Mogę zrobić ładny layout serwera, aż po pisanie własnych botów!</li>
-    <li><span class="emoji">📢</span> <span class="service-title">Social Boost</span><br />
-      Pomoc w wypromowaniu sociali, od Instagrama po Facebooka!</li>
-    <li><span class="emoji">🎬</span> <span class="service-title">Montaż</span><br />
-      Pomagam z montażem filmów bądź tworzeniem grafik i miniaturek!</li>
-  </ul>
-  <hr />
-  <p style="font-weight:bold; font-size:1.1rem; text-align:center;">
-    Aby skorzystać z moich usług, napisz do mnie na Discordzie!<br />
-    nick: <code>_kostek112_</code>
- </section>
-
-<footer>
-  <p>© 2025 Kostek112. Wszelkie prawa zastrzeżone.</p>
-  <p>© 2025 Kostek112. All rights reserved.</p>
-</footer>
+    <section id="home" class="active">
+      <h1>Witaj na stronie Kostek112!</h1>
+      <p>Tu możesz znaleźć różne usługi i oferty.</p>
+      <p>Kliknij powyżej, aby zobaczyć Social Boost lub Serwery Discord.</p>
+    </section>
 
     <section id="social-boost">
       <h1>SOCIAL BOOST</h1>
@@ -199,12 +175,14 @@
       });
       document.getElementById(pageId).classList.add('active');
 
-      // Ustaw kolor aktywnego linka na zielony, reszta też zielona
+      // Ustaw kolor aktywnego linka na jasnozielony (#00cc00), reszta na #00FF00
       document.querySelectorAll('nav a').forEach(link => {
         link.style.color = '#00FF00';
       });
+      document.getElementById('link-' + pageId).style.color = '#00cc00';
     }
 
+    // Ustawienia eventów
     document.getElementById('link-home').addEventListener('click', e => {
       e.preventDefault();
       showPage('home');
@@ -217,6 +195,10 @@
       e.preventDefault();
       showPage('discord-servers');
     });
+
+    // Pokazujemy domyślnie stronę główną i podkreślamy link
+    showPage('home');
   </script>
+
 </body>
 </html>
