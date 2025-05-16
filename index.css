@@ -1,215 +1,219 @@
-.u-section-1 .u-sheet-1 {
-  min-height: 1122px;
-}
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kostek112 - Strona</title>
+  <style>
+    /* --- Styl globalny --- */
+    body {
+      background-color: #000000;
+      color: #00FF00;
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 20px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    nav {
+      margin-bottom: 30px;
+      text-align: center;
+    }
+    nav a {
+      font-weight: 700;
+      font-size: 1.2rem;
+      margin: 0 15px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: #00cc00;
+    }
 
-.u-section-1 .u-image-1 {
-  width: 700px;
-  height: 700px;
-  margin: 120px auto 0;
-}
+    /* --- Ukrywanie sekcji --- */
+    section {
+      display: none;
+      width: 100%;
+      max-width: 800px;
+    }
+    section.active {
+      display: block;
+    }
 
-.u-section-1 .u-text-1 {
-  font-weight: 700;
-  width: 700px;
-  margin: 30px auto 60px;
-}
+    /* --- Styl strony głównej (przykład) --- */
+    #home {
+      text-align: center;
+    }
 
-@media (max-width: 767px) {
-  .u-section-1 .u-sheet-1 {
-    min-height: 920px;
-  }
+    /* --- Social Boost (przykład prostej sekcji) --- */
+    #social-boost {
+      text-align: center;
+      line-height: 1.6;
+      font-size: 1.3rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    #social-boost button {
+      margin-top: 15px;
+      background-color: #ff0000;
+      color: #000;
+      border: none;
+      padding: 12px 28px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 0 0 12px #ff0000aa;
+      transition: background-color 0.3s ease;
+    }
+    #social-boost button:hover {
+      background-color: #cc0000;
+      color: #fff;
+    }
 
-  .u-section-1 .u-image-1 {
-    width: 540px;
-    height: 540px;
-    margin-top: 112px;
-    margin-left: 0;
-    margin-right: 0;
-  }
+    /* --- Serwery Discord (Twój styl) --- */
+    #discord-servers {
+      color: #00FF00;
+      text-align: center;
+    }
+    #discord-servers h1 {
+      font-weight: 900;
+      font-size: 2.8rem;
+      margin-bottom: 25px;
+      text-shadow: 0 0 8px #00FF00;
+    }
+    .server-card {
+      background: #0b0b0b;
+      border: 2px solid #00FF00;
+      border-radius: 12px;
+      padding: 25px 30px;
+      margin: 15px auto;
+      width: 340px;
+      box-shadow: 0 0 15px #00FF00aa;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+    .server-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 25px #00ff00cc;
+    }
+    .server-name {
+      font-size: 1.9rem;
+      font-weight: 900;
+      margin-bottom: 10px;
+    }
+    .server-info {
+      font-size: 1.2rem;
+      margin-bottom: 12px;
+    }
+    .price {
+      font-size: 1.6rem;
+      font-weight: 900;
+      margin-bottom: 22px;
+      color: #00cc00;
+    }
+    .btn-buy {
+      background-color: #00FF00;
+      color: #000000;
+      font-weight: 700;
+      font-size: 1.15rem;
+      padding: 14px 30px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      text-decoration: none;
+      user-select: none;
+      transition: background-color 0.3s ease;
+      box-shadow: 0 0 10px #00ff00aa;
+    }
+    .btn-buy:hover {
+      background-color: #00cc00;
+      box-shadow: 0 0 20px #00cc00;
+    }
 
-  .u-section-1 .u-text-1 {
-    width: 540px;
-  }
-}
+  </style>
+</head>
+<body>
 
-@media (max-width: 575px) {
-  .u-section-1 .u-sheet-1 {
-    min-height: 720px;
-  }
+  <nav>
+    <a href="#" id="link-home" style="color:#00FF00;">🏠 Strona Główna</a>
+    <a href="#" id="link-social" style="color:#ff0000;">‼️ SOCIAL BOOST ‼️</a>
+    <a href="#" id="link-discord" style="color:#00FF00;">🟢 SERWERY DISCORD</a>
+  </nav>
 
-  .u-section-1 .u-image-1 {
-    width: 340px;
-    height: 340px;
-    margin-top: 119px;
-  }
+  <main>
+    <section id="home" class="active">
+      <h1>Witaj na stronie Kostek112!</h1>
+      <p>Tu możesz znaleźć różne usługi i oferty.</p>
+      <p>Kliknij powyżej, aby zobaczyć Social Boost lub Serwery Discord.</p>
+    </section>
 
-  .u-section-1 .u-text-1 {
-    width: 340px;
-  }
-} .u-section-2 {
-  background-image: none;
-}
+    <section id="social-boost">
+      <h1>‼️ SOCIAL BOOST ‼️</h1>
+      <p>🇵🇱</p>
+      <p>🎯 Zdobądź popularność w sieci!<br/>
+      🔥 Obserwacje, polubienia, wyświetlenia na:<br/>
+      📸 Instagram • 🎵 TikTok • ▶️ YouTube • 📘 Facebook<br/>
+      💸 Najniższe ceny na rynku!<br/>
+      🚀 Błyskawiczna realizacja • 100% anonimowo • Bezpiecznie</p>
+      <p>💬 Dołącz teraz i zacznij budować swoją markę online!</p>
+      <p>🇬🇧</p>
+      <p>🚀 Boost Your Online Presence!<br/>
+      💥 Get followers, likes & views on:<br/>
+      📸 Instagram • 🎵 TikTok • ▶️ YouTube • 📘 Facebook<br/>
+      💸 Lowest prices guaranteed!<br/>
+      ⚡ Fast delivery • 100% safe • Fully anonymous</p>
+      <p>💬 Join now and grow your social media like a pro!</p>
+      <button onclick="window.open('https://discord.gg/FkNAZE8BcE', '_blank', 'noopener')">DOŁĄCZ NA DISCORD</button>
+    </section>
 
-.u-section-2 .u-sheet-1 {
-  min-height: 600px;
-}
+    <section id="discord-servers">
+      <h1>🟢 Serwery Discord - Oferta</h1>
 
-.u-section-2 .u-text-1 {
-  margin: 60px auto 0;
-}
+      <div class="server-card">
+          <div class="server-name">📢 Serwer 1 - Reklamowy</div>
+          <div class="server-info">👥 Ponad 530 osób</div>
+          <div class="price">💰 40 PLN</div>
+          <a href="https://discord.gg/FZBydEggmH" class="btn-buy" target="_blank" rel="noopener noreferrer">🛒 Dołącz / Kup</a>
+      </div>
 
-.u-section-2 .u-list-1 {
-  grid-template-rows: repeat(2, auto);
-  margin-top: 80px;
-  margin-bottom: 0;
-}
+      <div class="server-card">
+          <div class="server-name">🛒 Serwer 2 - Shop</div>
+          <div class="server-info">👥 Ponad 300 osób</div>
+          <div class="price">💰 30 PLN</div>
+          <a href="https://discord.gg/63Dw9SWW6C" class="btn-buy" target="_blank" rel="noopener noreferrer">🛒 Dołącz / Kup</a>
+      </div>
+    </section>
+  </main>
 
-.u-section-2 .u-repeater-1 {
-  grid-auto-columns: calc(33.3333% - 6.66667px);
-  grid-template-columns: repeat(3, calc(33.3333% - 6.66667px));
-  min-height: 309px;
-  --gap: 10px;
-}
+  <script>
+    // Prosta funkcja przełączająca widoki
+    function showPage(pageId) {
+      document.querySelectorAll('section').forEach(section => {
+        section.classList.remove('active');
+      });
+      document.getElementById(pageId).classList.add('active');
+    }
 
-.u-section-2 .u-list-item-1 {
-  background-image: none;
-}
-
-.u-section-2 .u-container-layout-1 {
-  padding: 30px 20px;
-}
-
-.u-section-2 .u-icon-1 {
-  height: 90px;
-  width: 90px;
-  background-image: none;
-  color: rgb(255, 255, 255) !important;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-.u-section-2 .u-text-2 {
-  margin: 30px 0 0;
-}
-
-.u-section-2 .u-text-3 {
-  margin: 20px 0 0;
-}
-
-.u-section-2 .u-list-item-2 {
-  background-image: none;
-}
-
-.u-section-2 .u-container-layout-2 {
-  padding: 30px 20px;
-}
-
-.u-section-2 .u-icon-2 {
-  height: 90px;
-  width: 90px;
-  background-image: none;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-.u-section-2 .u-text-4 {
-  margin: 30px 0 0;
-}
-
-.u-section-2 .u-text-5 {
-  margin: 20px 0 0;
-}
-
-.u-section-2 .u-list-item-3 {
-  background-image: none;
-}
-
-.u-section-2 .u-container-layout-3 {
-  padding: 30px 20px;
-}
-
-.u-section-2 .u-icon-3 {
-  height: 90px;
-  width: 90px;
-  background-image: none;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-.u-section-2 .u-text-6 {
-  margin: 30px 0 0;
-}
-
-.u-section-2 .u-text-7 {
-  margin: 20px 0 0;
-}
-
-.u-section-2 .u-gallery-nav-1 {
-  position: absolute;
-  left: 10px;
-  width: 40px;
-  height: 40px;
-}
-
-.u-section-2 .u-gallery-nav-2 {
-  position: absolute;
-  right: 10px;
-  width: 40px;
-  height: 40px;
-}
-
-.u-section-2 .u-text-8 {
-  margin: 30px auto 60px;
-}
-
-@media (max-width: 1199px) {
-  .u-section-2 .u-repeater-1 {
-    grid-auto-columns: calc(33.333333333333336% - 6.66667px);
-    grid-template-columns: repeat(3, calc(33.333333333333336% - 6.66667px));
-    grid-gap: 10px;
-  }
-}
-
-@media (max-width: 991px) {
-  .u-section-2 .u-repeater-1 {
-    grid-auto-columns: calc(50% - 5.0000025px);
-    grid-template-columns: repeat(2, calc(50% - 5.0000025px));
-  }
-}
-
-@media (max-width: 767px) {
-  .u-section-2 .u-repeater-1 {
-    grid-auto-columns: calc(100% - 0px);
-    grid-template-columns: 100%;
-  }
-
-  .u-section-2 .u-text-2 {
-    width: auto;
-  }
-
-  .u-section-2 .u-text-3 {
-    margin-left: auto;
-  }
-
-  .u-section-2 .u-text-4 {
-    width: auto;
-  }
-
-  .u-section-2 .u-text-5 {
-    margin-left: auto;
-  }
-
-  .u-section-2 .u-text-6 {
-    width: auto;
-  }
-
-  .u-section-2 .u-text-7 {
-    margin-left: auto;
-  }
-}
-
-@media (max-width: 575px) {
-  .u-section-2 .u-repeater-1 {
-    grid-auto-columns: 100%;
-  }
-}
+    // Obsługa kliknięć w menu
+    document.getElementById('link-home').addEventListener('click', (e) => {
+      e.preventDefault();
+      showPage('home');
+    });
+    document.getElementById('link-social').addEventListener('click', (e) => {
+      e.preventDefault();
+      showPage('social-boost');
+    });
+    document.getElementById('link-discord').addEventListener('click', (e) => {
+      e.preventDefault();
+      showPage('discord-servers');
+    });
+  </script>
+</body>
+</html>
